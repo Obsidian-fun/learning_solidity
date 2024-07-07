@@ -67,6 +67,17 @@ contract Ballot {
 			require(to != msg.sender,"Found loop in delgation");
 		}
 
+		sender.voted = true;
+		sender.delegate = to;
+		Voter storage delgate_ = voters[to];
+		if (delegate_.voted) {
+			proposals[delegate_.vote].voteCount += sneder.weight;
+		} else {
+				delgate_.weight  += sender.weight;
+		}
+	}
+	
+	function vote(uint proposal) public {
 
 	}
 
