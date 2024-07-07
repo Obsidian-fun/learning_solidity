@@ -50,6 +50,16 @@ contract Ballot {
 		);
 
 		voters[voter].weight == 1;
+	}
+
+	// Delegation of vote to a person they trust,
+	function delegate(address to) public {
+		Voter storage sender = voters[msg.sender];
+
+		require(!sender.voted, "You already voted.");
+
+		require(to != msg.sender, "" )
+
 
 	}
 
