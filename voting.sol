@@ -38,17 +38,18 @@ contract Ballot {
 
 	function giveRightToVote(address voter) public {
 		require (
-			msg.sender = chairperson;
-		)
+			msg.sender = chairperson,
+		);
 	
 		require (
-			!voters[voter].voted
-		)
+			!voters[voter].voted,
+		);
 	
 		require (
-			voters[voter].weight == 0;
-		)
+			voters[voter].weight == 0,
+		);
 
+		voters[voter].weight == 1;
 
 	}
 
