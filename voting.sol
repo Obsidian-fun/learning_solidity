@@ -23,7 +23,16 @@ contract Ballot {
 	Proposal[] public proposals;
 
 	constructor(bytes[32] memory proposalNames) public {
-		chairperson = 
+		chairperson = msg.sender;
+
+		voters[chairperson].weight = 1;
+
+		for (uint i=0; i<proposalNames.length ; i++ {
+			proposals.push(Proposal({
+				name: proposalName[i],
+				voteCounte : 0,				
+			}));	
+		}	
 
 	}	
 
