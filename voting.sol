@@ -15,12 +15,21 @@ contract Ballot {
 		uint voteCount; // Total number of votes received
 	}
 
-	address public chairPerson; 
+	address public chairperson; 
 
-	// Mapping addresses to each voter struct,
+	// Mapping addresses to each voter struct saved under 'voters',
 	mapping(address => Voter) public voters;
 
 	Proposal[] public proposals;
+
+	constructor(bytes[32] memory proposalNames) public {
+		chairperson = 
+
+	}	
+
+
+
+
 
 
 
