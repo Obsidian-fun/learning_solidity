@@ -22,6 +22,7 @@ contract Ballot {
 
 	Proposal[] public proposals;
 
+	// Creating a ballot , and assigning ballot names,
 	constructor(bytes[32] memory proposalNames) public {
 		chairperson = msg.sender;
 
@@ -33,13 +34,23 @@ contract Ballot {
 				voteCounte : 0,				
 			}));	
 		}	
-
 	}	
 
+	function giveRightToVote(address voter) public {
+		require (
+			msg.sender = chairperson;
+		)
+	
+		require (
+			!voters[voter].voted
+		)
+	
+		require (
+			voters[voter].weight == 0;
+		)
 
 
+	}
 
-
-
-
+}
 
